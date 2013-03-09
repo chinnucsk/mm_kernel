@@ -3,6 +3,7 @@
               {vsn,"0.0.1"},
               {registered,[]},
               {applications,[kernel,stdlib]},
+              {mod,{mm_kernel_app,[]}},
+              {env,[]},
               {modules,[cmd,csv,mm_kernel,mm_kernel_app,mm_kernel_sup,
-                        perftest,sha1,tools]},
-              {env,[]}]}.
+                        perftest,sha1,tools]}]}.

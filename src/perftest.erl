@@ -1,6 +1,7 @@
 -module(perftest).
 -export([comprehensive/2, sequential/2, sequentialTimings/2, parallel/3]).
 
+% usage: perftest:comprehensive(1000, fun()->complex:bar(4) end).
 comprehensive(Cycles, F) ->
 	sequential(round(Cycles/10), F),	% Warming up 1
 	sequential(round(Cycles/5), F),	% Warming up 2
@@ -10,7 +11,7 @@ comprehensive(Cycles, F) ->
 	C = parallel(4, Cycles, F),
 	D = parallel(10, Cycles, F),
 	E = parallel(100, Cycles, F),
-	[A,B,C,D,E].
+	[A,B,C,D,E].	
 
 sequential(Cycles, F) ->
 	perftest("Sequential", Cycles,

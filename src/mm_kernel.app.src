@@ -7,15 +7,6 @@
                   kernel,
                   stdlib
                  ]},
-  {modules, [
-  	perftest,
-  	cmd,
-  	csv,
-  	sha1,
-  	tools,
-  	mm_kernel,
-  	mm_kernel_app,
-  	mm_kernel_sup
-  ]},
+  {mod, { mm_kernel_app, []}},
   {env, []}
  ]}.

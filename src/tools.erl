@@ -23,7 +23,9 @@
   is_process_alive/2,
   sleep/1,
   floor/1,
-  ceiling/1
+  ceiling/1,
+  atom_list_to_string/1,
+  integer_list_to_string/1
 	]).
 
 blank()->
@@ -134,3 +136,11 @@ ceiling(X) ->
         Pos when Pos > 0 -> T + 1;
         _ -> T
     end.
+
+atom_list_to_string([]) -> "";
+atom_list_to_string(Fields)->
+  lists:flatten([ atom_to_list(hd(Fields)) | [ ", " ++ atom_to_list(X) || X <- tl(Fields)]]).
+
+integer_list_to_string([])-> "";
+integer_list_to_string(Fields)->
+  lists:flatten([ integer_to_list(hd(Fields)) | [ ", " ++ integer_to_list(X) || X <- tl(Fields)]]).
